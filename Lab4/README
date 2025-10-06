@@ -1,0 +1,39 @@
+# Lab 4 — Basic HTTP with Flask
+
+What this does
+- A small Flask app that exposes:
+  - GET /            -> root message
+  - POST /echo       -> echoes posted form field `text`
+  - GET /factors/<number> -> returns prime factors as JSON (returns 400 for non-positive or non-integer)
+
+Files
+- my_server.py    — Flask server (runs on 0.0.0.0:5000)
+- my_calls.py     — example client to call the server (replace URL with your public VM URL)
+- UnitTests.py    — unit tests for factor function and endpoint
+- README.md       — this file
+
+How to run (in the dev container)
+1. Open a terminal in the project folder:
+   cd /workspaces/Cse2102/Lab4  - (My Directory)
+
+2. Run the Flask server (binds to all interfaces on port 5000):
+   python3 my_server.py
+
+   The server listens on port 5000 by default:
+   - Local/dev container access: http://localhost:5000/
+   - If using a remote/public VM, use the forwarded/public URL for external clients.
+
+3. Run unit tests (server does NOT need to be running — tests use Flask test_client):
+   python3 -m unittest UnitTests.py
+
+4. Run the example client from your local machine (replace the URL in my_calls.py with the public VM URL if needed):
+   python3 my_calls.py
+
+Tips
+- To open the server root in the host browser from the dev container:
+  $BROWSER http://localhost:5000/
+
+- If you need the server to run in background:
+  nohup python3 my_server.py &
+
+- If my_calls.py uses a hard-coded URL, update the `url` variable to your VM's public URL before running it from another machine.
