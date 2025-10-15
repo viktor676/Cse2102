@@ -1,0 +1,30 @@
+Lab 5 Implementation Description
+
+For this lab, I worked with a Flask-based HTTP server implementing a publish-subscribe pattern. The implementation consists of the following components:
+
+1. Server Implementation (flaskHttpServer.py):
+   - Used the provided Flask server template
+   - Verified all required endpoints were properly implemented:
+     * Subscriber storage using a dictionary
+     * Add subscriber endpoint (/add-subscriber)
+     * Delete subscriber endpoint (/delete-subscriber)
+     * List subscribers endpoint (/list-subscribers)
+     * Update and notify endpoint (/update-and-notify)
+
+2. Testing Implementation (ServerUnittests.py):
+   - Created comprehensive unit tests using Python's unittest framework
+   - Tests cover all major functionality:
+     * Root endpoint response
+     * Adding and listing subscribers
+     * Deleting subscribers
+     * Update and notification system
+
+3. Documentation:
+   - Created a detailed README.md with:
+     * Installation instructions
+     * Server running instructions
+     * API endpoint documentation
+     * Test execution instructions
+     * Example curl commands for testing
+
+The system successfully implements the publish-subscribe pattern where subscribers can be added, removed, listed, and notified of updates through the HTTP interface. All notifications are handled through backend print statements as specified in the requirements.
